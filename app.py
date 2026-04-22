@@ -25,7 +25,6 @@ custom_css = """
             .stDeployButton {display: none;}
             footer {visibility: hidden;}
             
-            /* Override Streamlit's default rounded corners on images */
             [data-testid="stImage"] img {
                 border-radius: 0px !important;
             }
@@ -49,9 +48,11 @@ with st.sidebar:
 
     st.markdown("""
     **:red[CONTACT:]**\n
-    **:red[Phone: 666-6666]**\n
+    **:red[Phone: 666-666-6666]**\n
     **:red[Email: dummy_email@gmail.com]**
     """)
+
+    st.divider()
 
     if st.button("Clear Chat History"):
         st.session_state.messages = []
@@ -90,12 +91,18 @@ if prompt := st.chat_input("E.g., How do I reset my password?"):
                         'generationConfiguration': {
                             'promptTemplate': {
                                 'textPromptTemplate': """You are a helpful, professional internal IT Helpdesk assistant for the Mississippi Development Authority (MDA). 
+
+                                CRITICAL GUARDRAIL - SEMANTIC BOUNDARY ENFORCEMENT:
+                                You are strictly prohibited from providing IT support for personal, home, or non-agency equipment. 
+                                If the user's query mentions "home", "personal", "my own", or implies the device is not MDA-issued, you MUST refuse. Output exactly this response: "I am authorized to assist with MDA-issued hardware and enterprise systems only. For security reasons, I cannot provide troubleshooting steps for personal or home devices. If you need further assistance, please contact the human IT Helpdesk directly at 666-666-6666 or dummy_email@gmail.com."
+
+                                GENERAL INSTRUCTIONS:
                                 Answer the user's question using ONLY the provided search results. Do NOT include your internal reasoning, plans, or thinking processes. Output ONLY the final answer directly to the user in a friendly tone. Format your response cleanly using bullet points or numbered lists where appropriate.
-                                
+
                                 If the provided search results do not contain the answer, do NOT guess or make up information. Instead, politely apologize and instruct the user to contact the human IT Helpdesk directly at 666-666-6666 or dummy_email@gmail.com.
 
                                 Search results: $search_results$
-                                
+
                                 User query: $query$"""
                             },
                             'inferenceConfig': {
