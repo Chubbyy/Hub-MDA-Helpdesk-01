@@ -4,7 +4,7 @@
 A serverless, RAG-enabled helpdesk assistant utilizing AWS S3, OpenSearch Vector Database, and Bedrock Knowledge Base through the Amazon Nova Lite model and Streamlit designed to support the Mississippi Development Authority answer general and redundant inquiries sent to the IT Helpdesk.
 
 ## Agency Problem
-MDA employees need a fast, accurate approach to assist with generic and often repetitive IT troubleshooting inquiries so more focus and effort can be placed on more complex and human-reliant support.
+MDA employees need a fast, accurate approach to assist with generic and often repetitive IT troubleshooting inquiries, allowing IT staff to focus their efforts on more complex, high-level support tickets.
 
 ## PoC Scope and Demonstrated Capabilities
 This PoC demonstrates the feasibility of using a localized AWS Bedrock Knowledge Base to retrieve and synthesize IT documentation into a conversational interface that can reliably answer relevant inquiries.
