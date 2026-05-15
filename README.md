@@ -1,5 +1,9 @@
 # MDA IT Helpdesk AI (Phase 1 PoC)
 
+This repository contains the code and documentation for an Artificial Intelligence Innovation Hub Proof of Concept focused on reducing redundant, low-complexity IT Helpdesk tickets. The PoC was developed to explore whether a Retrieval-Augmented Generation (RAG) assistant could help the Mississippi Development Authority (MDA) by securely referencing IT manuals to provide instant troubleshooting. The project demonstrates feasibility within a limited prototype environment and is not a production-ready solution.
+
+**Data Disclaimer:** This repository does not include real agency data. Any included datasets, manuals, or IT documents are scrubbed, placeholder samples, or illustrative only.
+
 ## Overview
 A serverless, RAG-enabled helpdesk assistant utilizing AWS S3, OpenSearch Vector Database, and Bedrock Knowledge Base through the Amazon Nova Lite model and Streamlit designed to support the Mississippi Development Authority answer general and redundant inquiries sent to the IT Helpdesk.
 
